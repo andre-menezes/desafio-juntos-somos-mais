@@ -135,3 +135,47 @@ select:focus {
 .form-content input {
   margin-right: 5px;
 }
+
+.members-header {
+  background: #f47521;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+}
+
+.card-list {
+  border-radius: 5px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.card {
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #aaa;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 400px;
+}
+
+.card > img { border-radius: 50%; }
+
+.card > h2 {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 10px 0;
+}
+
+.address-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
