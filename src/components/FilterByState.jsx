@@ -12,7 +12,6 @@ export default function FilterByState() {
     setFilterByState,
     setFilteredData,
   } = useContext(ChallengeContext);
-  const [isFetching, setIsFetching] = useState(true);
   const [stateName, setStateName] = useState('');
   const [checked, setChecked] = useState(false);
 
@@ -20,12 +19,11 @@ export default function FilterByState() {
   // fetch da API dos Estados
   useEffect(() => {
     const getFederatedUnits = async () => {
-      setIsFetching(true);
       const response = await fetchFederatedUnits();
       setFederatedUnits(response);
-      setIsFetching(false);
     }
     getFederatedUnits();
+    // eslint-disable-next-line
   }, []);
 
   // Filtro por Estado
@@ -47,6 +45,7 @@ export default function FilterByState() {
       }
     };
     filterByFederatedUnits();
+    // eslint-disable-next-line
   }, [filterByState]);
 
   useEffect(() => {
@@ -59,10 +58,11 @@ export default function FilterByState() {
       }
     }
     addStateFilter();
+    // eslint-disable-next-line
   }, [stateName, checked])
 
-  return isFetching ? <p>Loading</p> : (
-    <form>
+  return (
+    <form className="form-content">
       {federatedUnits.map(({ nome, id }) => (
         <label htmlFor="uf" key={ id }>
           <Input

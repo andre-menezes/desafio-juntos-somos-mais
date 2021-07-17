@@ -26,6 +26,7 @@ export default function Footer({ setFirst, setLast }) {
       }
     }
     definePagesIndex();
+    // eslint-disable-next-line
   }, [filteredData]);
 
   const changePage = (page) => {

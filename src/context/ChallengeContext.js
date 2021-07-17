@@ -1,6 +1,5 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 import PropTypes from 'prop-types';
-// import { fetchApi, fetchFederatedUnits } from '../services';
 
 const ChallengeContext = createContext();
 

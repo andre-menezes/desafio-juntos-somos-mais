@@ -29,6 +29,7 @@ export default function CardList() {
     }
 
     getData();
+    // eslint-disable-next-line
   }, []);
   
   return  isFetching ? <img src={ logo } alt="Juntos Somos Mais" /> : filteredData && (
