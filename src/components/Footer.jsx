@@ -3,12 +3,15 @@ import { ChallengeContext } from '../context/ChallengeContext';
 import Button from './Button';
 
 const MAX_CARDS = 9;
+// const MAX_PAGES = 8;
 const ONE = 1;
 
 export default function Footer({ setFirst, setLast }) {
   const { filteredData } = useContext(ChallengeContext);
   const [pagesIndex, setPagesIndex] = useState([]);
   const [selectedPage, setSelectedPage] = useState(1);
+  const [firstPage, setFirstPage] = useState(1);
+  const [lastPage, setLastPage] = useState(6);
 
   let pages = [];
 
@@ -30,6 +33,7 @@ export default function Footer({ setFirst, setLast }) {
   }, [filteredData]);
 
   const changePage = (page) => {
+    setFirstPage(page);
     setFirst(page * MAX_CARDS - MAX_CARDS);
     if (page * MAX_CARDS - ONE >= filteredData.length) {
       setLast(filteredData.length - ONE);
@@ -39,10 +43,13 @@ export default function Footer({ setFirst, setLast }) {
     setSelectedPage(page);
   }
   
+  /* .filter((page, index) => index >= firstPage - ONE && index <= lastPage) */
+  
   return pagesIndex ? (
     <footer>
       {
-        pagesIndex && pagesIndex.map((number) => (
+        pagesIndex.length !== ONE && pagesIndex
+          .map((number) => (
           <Button
             key={ number }
             className={ number === selectedPage ? 'btn-page selected' : 'btn-page' }

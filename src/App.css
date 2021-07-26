@@ -125,7 +125,6 @@ select:focus {
   gap: 10px;
   grid-auto-flow: row;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: fit-content(40%);
 }
 
 .form-content label {
@@ -161,8 +160,9 @@ select:focus {
   box-shadow: 5px 5px 10px #aaa;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
   padding: 20px;
-  max-width: 400px;
+  width: 270px;
 }
 
 .card > img { border-radius: 50%; }
@@ -178,4 +178,30 @@ select:focus {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+footer {
+  background: #ccc;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-page {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  height: 25px;
+  margin: 0 auto;
+  width: 25px;
+}
+
+.selected {
+  background-color: #f47722;
+  color: white;
+  font-weight: 700;
 }

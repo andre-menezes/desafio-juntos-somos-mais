@@ -43,7 +43,7 @@ export default function CardList() {
       <div className="card-list">
       {
         filteredData
-          .filter((card, index) => index >= first - ONE && index <= last)
+          .filter((card, index) => index > first - ONE && index <= last)
           .map(({ email, location, name, picture }) => (
           <Card
             key={ email }
