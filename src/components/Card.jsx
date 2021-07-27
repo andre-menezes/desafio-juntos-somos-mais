@@ -13,13 +13,13 @@ export default function Card(props) {
   const fullName = `${capitalize(first)} ${capitalize(last)}`;
 
   return (
-    <div>
+    <div className="card">
       <img src={ large } alt={ fullName } />
       <h2>{fullName}</h2>
-      <div>
+      <div className="address-content">
         <span>{capitalize(street)}</span>
-        <span>{capitalize(city)}</span>
-        <span>{`${capitalize(state)} - CEP: ${postcode}`}</span>
+        <span>{`${capitalize(city)} - ${capitalize(state)}`}</span>
+        <span>{`CEP: ${postcode}`}</span>
       </div>
     </div>
   )

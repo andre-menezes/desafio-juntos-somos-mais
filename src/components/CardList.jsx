@@ -29,19 +29,21 @@ export default function CardList() {
     }
 
     getData();
+    // eslint-disable-next-line
   }, []);
   
   return  isFetching ? <img src={ logo } alt="Juntos Somos Mais" /> : filteredData && (
-    <div>
-      <header>
+    <section>
+      <header className="members-header">
         <div>
           {`Exibindo ${filteredData.length === 0 ? first : first + ONE} - ${last >= filteredData.length
             ? filteredData.length : last + ONE} de ${filteredData.length}`}
         </div>
       </header>
+      <div className="card-list">
       {
         filteredData
-          .filter((card, index) => index >= first - ONE && index <= last)
+          .filter((card, index) => index > first - ONE && index <= last)
           .map(({ email, location, name, picture }) => (
           <Card
             key={ email }
@@ -51,7 +53,8 @@ export default function CardList() {
             picture={ picture }
           />
         ))}
+      </div>
       <Footer setFirst={ setFirst } setLast={ setLast } />
-    </div>
+    </section>
   );
 };

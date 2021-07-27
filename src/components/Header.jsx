@@ -26,17 +26,19 @@ export default function Header() {
       }
     };
     filterByText();
+    // eslint-disable-next-line
   }, [searchInput]);
   
   return (
-    <header>
-      <div>
-        <img width="100" src={logo} alt='Juntos Somos Mais' />
+    <header className="header-content">
+      <div className="content">
+        <img className="header-logo" src={logo} alt='Juntos Somos Mais' />
       </div>
-      <form>
+      <form className="searchbar content">
         <div>
-          <img src={ searchIcon } alt='Search' />
+          <img className="search-icon" src={ searchIcon } alt='Search' />
           <Input
+            className="search-input"
             func={ setSearchInput }
             placeholder="Buscar aqui"
             type="text"
