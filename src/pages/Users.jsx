@@ -9,7 +9,7 @@ export default function Users() {
   const [hidden, setHidden] = useState(true);
   
   return (
-    <main className="content">
+    <main className="main-content">
       <aside className="filter-content">
         <div className="filter-header">
           <span>Filtros</span>

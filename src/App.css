@@ -15,16 +15,14 @@ select:focus {
   outline-offset: 0;
 }
 
-.content {
-  margin: 0 20px;
-}
+button { cursor: pointer; }
 
 .header-content {
   align-items: center;
   display: grid;
   grid-template-rows: 1fr 1fr;
   margin-top: 20px;
-  width: 100vw;
+  width: 100%;
 }
 
 .header-content div {
@@ -32,13 +30,14 @@ select:focus {
 }
 
 .header-logo {
-  max-width: 300px;
+  width: 250px;
 }
 
 .searchbar {
   border: 1px solid #454545;
   border-radius: 30px;
   height: 50px;
+  margin: 0 10px;
   padding: 5px 15px;
 }
 
@@ -64,6 +63,7 @@ select:focus {
 .title {
   font-size: 1.5rem;
   margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 .subtitle {
@@ -79,7 +79,7 @@ select:focus {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  margin-bottom: 20px;
+  margin:  0 10px 20px;
 }
 
 .filter-header {
@@ -140,7 +140,7 @@ select:focus {
   border-radius: 5px;
   color: white;
   padding: 5px;
-  margin-bottom: 10px;
+  margin: 10px;
   text-align: center;
   text-shadow: 1px 1px 2px black;
 }
@@ -151,7 +151,9 @@ select:focus {
   gap: 20px;
   grid-template-columns: 1fr;
   padding: 10px;
+  margin: 0 auto;
   margin-bottom: 20px;
+  max-width: 900px;
 }
 
 .card {
@@ -204,4 +206,56 @@ footer {
   background-color: #f47722;
   color: white;
   font-weight: 700;
+}
+
+@media (min-width: 700px) {
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .card-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  
+  .header-content {
+    justify-content: center;
+    display: flex;
+    margin: 20px auto 30px;
+    width: 80%;
+  }
+
+  .searchbar {
+    margin-left: 30px;
+    width: 50%;
+  }
+
+  .main-content {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    grid-template-areas: "title title title";
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .form-content label { font-size: 1rem; }
+
+  .form-content { gap: 20px; }
+
+  .title { grid-area: title; }
+
+  .members-header { margin-top: 0; }
+
+  .filters {
+    height: 100%;
+    margin: 0 20px;
+  }
+
+  .filter-content { margin-bottom: 10px; }
+
+  .filter-header > button { display: none; }
 }

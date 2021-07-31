@@ -31,13 +31,14 @@ export default function Header() {
   
   return (
     <header className="header-content">
-      <div className="content">
+      <div>
         <img className="header-logo" src={logo} alt='Juntos Somos Mais' />
       </div>
-      <form className="searchbar content">
+      <form className="searchbar">
         <div>
           <img className="search-icon" src={ searchIcon } alt='Search' />
           <Input
+            testid='searchbar-input'
             className="search-input"
             func={ setSearchInput }
             placeholder="Buscar aqui"

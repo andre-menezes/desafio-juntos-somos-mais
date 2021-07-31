@@ -10,7 +10,6 @@ export default function Footer({ setFirst, setLast }) {
   const { filteredData } = useContext(ChallengeContext);
   const [pagesIndex, setPagesIndex] = useState([]);
   const [selectedPage, setSelectedPage] = useState(1);
-
   let pages = [];
 
   useEffect(() => {
@@ -43,7 +42,7 @@ export default function Footer({ setFirst, setLast }) {
   return pagesIndex ? (
     <footer>
       {
-        pagesIndex.length !== ONE && pagesIndex
+        pagesIndex
           .map((number) => (
           <Button
             key={ number }

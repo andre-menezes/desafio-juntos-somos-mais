@@ -1,9 +1,10 @@
 import React from 'react';
 
 export default function Input(props) {
-  const { className, func, placeholder, setChecked, type, value } = props;
+  const { testid, className, func, placeholder, setChecked, type, value } = props;
   return (
     <input
+      data-testid={ testid }
       className={ className }
       type={ type }
       placeholder={ placeholder }
