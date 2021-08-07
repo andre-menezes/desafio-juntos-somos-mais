@@ -1,30 +1,46 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ChallengeContext } from '../context/ChallengeContext';
-import { fetchFederatedUnits } from '../services';
 import Input from './Input';
 
 export default function FilterByState() {
   const {
     data,
-    federatedUnits,
     filterByState,
-    setFederatedUnits,
-    setFilterByState,
     setFilteredData,
+    setFilterByState,
   } = useContext(ChallengeContext);
   const [stateName, setStateName] = useState('');
   const [checked, setChecked] = useState(false);
+  const federatedUnits = [
+    'Acre',
+    'Alagoas',
+    'Amapá',
+    'Amazonas',
+    'Bahia',
+    'Ceará',
+    'Distrito Federal',
+    'Espírito Santo',
+    'Goiás',
+    'Maranhão',
+    'Mato Grosso',
+    'Mato Grosso do Sul',
+    'Minas Gerais',
+    'Pará',
+    'Paraíba',
+    'Paraná',
+    'Pernambuco',
+    'Piauí',
+    'Rio de Janeiro',
+    'Rio Grande do Norte',
+    'Rio Grande do Sul',
+    'Rondônia',
+    'Roraima',
+    'Santa Catarina',
+    'São Paulo',
+    'Sergipe',
+    'Tocantins',
+  ]
 
-
-  // fetch da API dos Estados
-  useEffect(() => {
-    const getFederatedUnits = async () => {
-      const response = await fetchFederatedUnits();
-      setFederatedUnits(response);
-    }
-    getFederatedUnits();
-    // eslint-disable-next-line
-  }, []);
 
   // Filtro por Estado
   useEffect(() => {
@@ -63,16 +79,16 @@ export default function FilterByState() {
 
   return (
     <form className="form-content">
-      {federatedUnits.map(({ nome, id }) => (
-        <label htmlFor="uf" key={ id }>
+      {federatedUnits.map((state) => (
+        <label htmlFor="uf" key={ state }>
           <Input
             setChecked={ setChecked }
             func={ setStateName }
             name="uf"
             type="checkbox"
-            value={ nome }
+            value={ state }
           />
-          {nome}
+          {state}
         </label>
       ))}
     </form>

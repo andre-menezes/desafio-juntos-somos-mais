@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Card(props) {
-  const { location, name, picture } = props;
+  const { location, name, picture, testid } = props;
   const { city, postcode, state, street } = location;
   const { first, last } = name;
   const { large } = picture;
@@ -13,7 +13,7 @@ export default function Card(props) {
   const fullName = `${capitalize(first)} ${capitalize(last)}`;
 
   return (
-    <div className="card">
+    <div className="card" data-testid={ testid }>
       <img src={ large } alt={ fullName } />
       <h2>{fullName}</h2>
       <div className="address-content">

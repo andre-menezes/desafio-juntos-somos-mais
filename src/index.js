@@ -2,14 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
 import { Provider } from './context/ChallengeContext';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Provider>
+  <Provider>
       <App />
-    </Provider>
-  </BrowserRouter>,
+  </Provider>,
   document.getElementById('root')
 );

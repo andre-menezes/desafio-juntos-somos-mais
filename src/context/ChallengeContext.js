@@ -5,15 +5,12 @@ const ChallengeContext = createContext();
 
 export function ChallengeProvider({ children }) {
   const [data, setData] = useState([]);
-  const [federatedUnits, setFederatedUnits] = useState([]);
   const [filterByState, setFilterByState] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   
   const context = {
     data,
     setData,
-    federatedUnits,
-    setFederatedUnits,
     filterByState,
     setFilterByState,
     filteredData,

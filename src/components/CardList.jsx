@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import logo from '../images/logo.svg';
 import Card from './Card';
 import { ChallengeContext } from '../context/ChallengeContext';
-import { fetchApi } from '../services';
+import fetchApi from '../services';
 import Footer from './Footer';
 
 const ONE = 1;
@@ -32,8 +32,8 @@ export default function CardList() {
     // eslint-disable-next-line
   }, []);
   
-  return  isFetching ? <img src={ logo } alt="Juntos Somos Mais" /> : filteredData && (
-    <section>
+  return  isFetching ? <img src={ logo } alt="loading"/> : filteredData && (
+    <section data-testid="card-list-section">
       <header className="members-header">
         <div>
           {`Exibindo ${filteredData.length === 0 ? first : first + ONE} - ${last >= filteredData.length
@@ -46,6 +46,7 @@ export default function CardList() {
           .filter((card, index) => index > first - ONE && index <= last)
           .map(({ email, location, name, picture }) => (
           <Card
+            testid="member-card"
             key={ email }
             location={ location }
             name={ name }
