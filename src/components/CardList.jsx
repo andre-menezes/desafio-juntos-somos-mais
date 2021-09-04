@@ -8,7 +8,7 @@ import Footer from './Footer';
 const ONE = 1;
 
 export default function CardList() {
-  const [isFetching, setIsFetching] = useState(true);
+  const [isFetching, setIsFetching] = useState(false);
   const [first, setFirst] = useState(0);
   const [last, setLast] = useState(8);
   const {

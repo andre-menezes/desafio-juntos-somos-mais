@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 const ChallengeContext = createContext();
 
-export function ChallengeProvider({ children }) {
+export function ChallengeProvider({ children, initialState = [] }) {
+
   const [data, setData] = useState([]);
   const [filterByState, setFilterByState] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
+  const [filteredData, setFilteredData] = useState(initialState);
   
   const context = {
     data,

@@ -6,9 +6,9 @@ const MAX_CARDS = 9;
 // const MAX_PAGES = 8;
 const ONE = 1;
 
-export default function Footer({ setFirst, setLast }) {
+export default function Footer({ setFirst, setLast, initialState = [] }) {
   const { filteredData } = useContext(ChallengeContext);
-  const [pagesIndex, setPagesIndex] = useState([]);
+  const [pagesIndex, setPagesIndex] = useState(initialState);
   const [selectedPage, setSelectedPage] = useState(1);
   let pages = [];
 
@@ -40,11 +40,12 @@ export default function Footer({ setFirst, setLast }) {
   }
   
   return pagesIndex ? (
-    <footer>
+    <footer data-testid='footer'>
       {
         pagesIndex
           .map((number) => (
           <Button
+            data-testid='page-index'  
             key={ number }
             className={ number === selectedPage ? 'btn-page selected' : 'btn-page' }
             func={ () => changePage(number) }
